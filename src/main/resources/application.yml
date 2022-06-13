@@ -12,6 +12,14 @@ spring:
     view:
       suffix: .html
       prefix: /
-
-mybatis:
-  mapper-locations: classpath*:mapper/*Mapper.xml
+mybatis-plus:
+  mapper-locations: classpath:com/tencent/wxcloudrun/mapper/xml/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+druid:
+  mysql:
+    usePingMethod: false
